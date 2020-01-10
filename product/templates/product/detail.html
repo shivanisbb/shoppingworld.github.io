@@ -1,0 +1,24 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+    <div class="product-detail">
+             <div class="jumbotron text-white" style="background-color:skyblue;">
+
+        <img style="width: 250px" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/no_image.png' %}{% endif %}" height="200" width="200"/>"
+        <h1>{{ product.title }}</h1>
+        <p class="price">${{ product.price }}</p>
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{cart_add_form}}
+
+                {% csrf_token %}
+                <input type="submit" value="Add to cart">
+            </form>
+        {{ product.desc|linebreaks }}
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{%extends 'shop/base.html'%}
+
+{%load staticfiles%}
+
+<title>registration</title>
+
+
+{% block styles %}
+
+  <style>
+      body {
+        border-top: 4px solid #E47541;
+        /*min-height: 5000px;*/
+        /*min-width: 5000px;*/
+        background: url('{% static "image8.jpg" %}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: conver;
+        background-size: cover;
+        /*background-image: url('{% static "image8.jpg" %}');*/
+        /*background-image:url('https://lh4.googleusercontent.com/-FsgMNhfQLSg/AAAAAAAAAAI/AAAAAAAAaRY/3VnF3vSuWKk/photo.jpg');*/
+        /*background-repeat: repeat-x;*/
+      }
+
+
+  </style>
+
+{% endblock %}
+
+{%block content%}
+<div class='text-right'>
+</div>
+<div class="container">
+    <div class="jumbotron text-white" style="background-color:pink;">
+
+    <form method="POST" class="post-form">
+                <div class="text-center">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-dark">SUBMIT</button>
+
+        </div>
+    </form>
+    </div>
+</div>
+{%endblock%}

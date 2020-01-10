@@ -1,0 +1,39 @@
+{%extends 'shop/base.html'%}
+{%load static%}
+{% block styles %}
+
+  <style>
+      body {
+        border-top: 4px solid #E47541;
+        /*min-height: 5000px;*/
+        /*min-width: 5000px;*/
+        background: url('{% static "image8.jpg" %}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: conver;
+        background-size: cover;
+        /*background-image: url('{% static "image8.jpg" %}');*/
+        /*background-image:url('https://lh4.googleusercontent.com/-FsgMNhfQLSg/AAAAAAAAAAI/AAAAAAAAaRY/3VnF3vSuWKk/photo.jpg');*/
+        /*background-repeat: repeat-x;*/
+      }
+
+
+  </style>
+
+{% endblock %}
+
+{%block content%}
+  <div class="row">
+
+    {% for obj in object_list%}
+         <div class="col">
+
+              <a href="{{obj.get_absolute_url}}" >
+             <img src="{% if obj.image %} {{ obj.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" height="200" width="200" >
+              </a>
+             <a href="{{obj.get_absolute_url}}" >{{obj.title}}</a>
+         </div>
+
+    {% endfor %}
+  </div>
+{%endblock%}

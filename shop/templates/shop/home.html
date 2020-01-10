@@ -1,0 +1,39 @@
+{%extends 'shop/base.html'%}
+{% load staticfiles %}
+
+<title> home</title>
+
+{% block styles %}
+
+  <style>
+      body {
+        border-top: 4px solid #E47541;
+        /*min-height: 5000px;*/
+        /*min-width: 5000px;*/
+        background: url('{% static "image8.jpg" %}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: conver;
+        background-size: cover;
+        /*background-image: url('{% static "image8.jpg" %}');*/
+        /*background-image:url('https://lh4.googleusercontent.com/-FsgMNhfQLSg/AAAAAAAAAAI/AAAAAAAAaRY/3VnF3vSuWKk/photo.jpg');*/
+        /*background-repeat: repeat-x;*/
+      }
+
+
+  </style>
+
+{% endblock %}
+
+{%block content%}
+<div class='text-center'>
+</div>
+<div class="container">
+
+<h1>
+    <div class='text-center'></div >
+    HELLO!
+    welcome to shopping world
+</h1>
+</div>
+{%endblock%}
